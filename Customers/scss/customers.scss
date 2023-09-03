@@ -1,0 +1,122 @@
+//variable
+$color-blue-1: #2a73dc;
+$color-blue-2: #1d365e;
+$color-blue-3: #60a4f4;
+
+$color-white-1: #f5f9fe;
+$color-white-2: #e2ebfc;
+$color-white-3: #fff;
+
+//mixin
+@mixin btnTheme($borderRadius) {
+  border: 1px solid red;
+  padding: 10px 35px;
+  border-radius: $borderRadius;
+  font-size: 14px;
+}
+@mixin shadowTheme($base) {
+  box-shadow: $base * 1px $base * 1px $base * 2px $color-white-2,
+    $base * -1px $base * -1px $base * 2px $color-white-3;
+}
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+//body
+body {
+  background: #f5f9fe;
+}
+
+//header
+header {
+  box-shadow: 0 2px 4px $color-white-2;
+  .logo {
+    color: $color-blue-1;
+  }
+  a {
+    color: $color-blue-2;
+    transition: all 0.5s;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      width: 0%;
+      height: 3px;
+      background: $color-blue-1;
+      transition: all 0.5s;
+    }
+    &:hover::before,
+    &.active::before {
+      width: 100%;
+    }
+    &:hover {
+      color: $color-blue-1;
+    }
+    &.active {
+      color: $color-blue-1;
+    }
+  }
+}
+
+//banner
+.banner {
+  background-image: url("../img/imagestock_2887007.jpg");
+  background-size: cover;
+  background-position: bottom;
+  h2 {
+    color: $color-blue-1;
+  }
+  h3 {
+    color: $color-blue-2;
+  }
+
+  //button
+  .btn-group {
+    .shop {
+      @include btnTheme(10px);
+      background: linear-gradient(120deg, $color-blue-3, $color-blue-1);
+      border: none;
+      color: $color-white-1;
+    }
+    .info {
+      @include btnTheme(10px);
+      border-color: $color-blue-1;
+      color: $color-blue-1;
+      transition: all 0.5s;
+      &:hover {
+        background: $color-blue-1;
+        color: $color-white-1;
+      }
+    }
+  }
+}
+
+.products {
+  .list {
+    .item {
+      @include shadowTheme(6);
+      padding: 40px;
+      img {
+        @include shadowTheme(6);
+        width: 100%;
+      }
+      .content {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+//footer
+.footer {
+  background-color: $color-blue-3;
+  h2 {
+    font-size: 30px;
+    color: red;
+  }
+}

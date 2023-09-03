@@ -1,0 +1,95 @@
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+body {
+  background: #f5f9fe;
+}
+
+header {
+  box-shadow: 0 2px 4px #e2ebfc;
+}
+header .logo {
+  color: #2a73dc;
+}
+header a {
+  color: #1d365e;
+  transition: all 0.5s;
+  position: relative;
+}
+header a::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 3px;
+  background: #2a73dc;
+  transition: all 0.5s;
+}
+header a:hover::before, header a.active::before {
+  width: 100%;
+}
+header a:hover {
+  color: #2a73dc;
+}
+header a.active {
+  color: #2a73dc;
+}
+
+.banner {
+  background-image: url("../img/imagestock_2887007.jpg");
+  background-size: cover;
+  background-position: bottom;
+}
+.banner h2 {
+  color: #2a73dc;
+}
+.banner h3 {
+  color: #1d365e;
+}
+.banner .btn-group .shop {
+  border: 1px solid red;
+  padding: 10px 35px;
+  border-radius: 10px;
+  font-size: 14px;
+  background: linear-gradient(120deg, #60a4f4, #2a73dc);
+  border: none;
+  color: #f5f9fe;
+}
+.banner .btn-group .info {
+  border: 1px solid red;
+  padding: 10px 35px;
+  border-radius: 10px;
+  font-size: 14px;
+  border-color: #2a73dc;
+  color: #2a73dc;
+  transition: all 0.5s;
+}
+.banner .btn-group .info:hover {
+  background: #2a73dc;
+  color: #f5f9fe;
+}
+
+.products .list .item {
+  box-shadow: 6px 6px 12px #e2ebfc, -6px -6px 12px #fff;
+  padding: 40px;
+}
+.products .list .item img {
+  box-shadow: 6px 6px 12px #e2ebfc, -6px -6px 12px #fff;
+  width: 100%;
+}
+.products .list .item .content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer {
+  background-color: #60a4f4;
+}
+.footer h2 {
+  font-size: 30px;
+  color: red;
+}/*# sourceMappingURL=customers.css.map */
